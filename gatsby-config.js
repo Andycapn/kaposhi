@@ -1,11 +1,22 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Urbanwear Clothing`,
+    description: `High End Clothing Online Store`,
     author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        shopName: "Urbanwearzm",
+        accessToken: "a487342cdf4aaf8ffb0b49ef832b0d3b",
+        apiVersion: "2020-01",
+        verbose: true,
+        includeCollections: ["shop", "content"],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -1,22 +1,33 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Urban wear Clothing",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Andrew Ndhlovu <andrewndhlovu55@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-brands-svg-icons": "^5.15.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "gatsby": "^2.32.3",
+    "gatsby-background-image": "^1.4.1",
     "gatsby-image": "^2.11.0",
+    "gatsby-plugin-emotion": "^5.4.0",
     "gatsby-plugin-manifest": "^2.12.0",
     "gatsby-plugin-offline": "^3.10.0",
     "gatsby-plugin-react-helmet": "^3.10.0",
     "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-source-shopify": "^3.10.0",
     "gatsby-transformer-sharp": "^2.12.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "yarn": "^1.22.10"
   },
   "devDependencies": {
     "prettier": "2.2.1"
