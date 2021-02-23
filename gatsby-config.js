@@ -1,3 +1,8 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
+
 module.exports = {
   siteMetadata: {
     title: `Urbanwear Clothing`,
@@ -11,7 +16,7 @@ module.exports = {
       resolve: `gatsby-source-shopify`,
       options: {
         shopName: "Urbanwearzm",
-        accessToken: "a487342cdf4aaf8ffb0b49ef832b0d3b",
+        accessToken: process.env.SHOPIFY_STORE,
         apiVersion: "2020-01",
         verbose: true,
         includeCollections: ["shop", "content"],
