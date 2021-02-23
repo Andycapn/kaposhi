@@ -78,7 +78,7 @@ const Header = ({ siteTitle }) => {
           position: fixed;
           top: 0;
           display: flex;
-          width: 100%;
+          width: 100vw;
           max-height: 7vh;
           align-items: center;
           background: linear-gradient(
