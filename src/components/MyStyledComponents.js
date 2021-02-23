@@ -129,7 +129,6 @@ const FooterTag = styled.footer`
   @media only screen and (min-width: 800px) {
     padding: 2rem calc((100vw - 1366px) / 2);
     display: grid;
-    grid-template-columns: 1fr;
   }
   @media (min-width: 998px) {
     padding: 0.5rem calc((100vw - 900px) / 2);

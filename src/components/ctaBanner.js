@@ -13,6 +13,7 @@ const CtaBanner = ({ message, link, btnText }) => {
         h3 {
           font-family: "Prompt", sans-serif;
           font-size: 32px;
+          text-transform: uppercase;
         }
       `}
     >
@@ -21,12 +22,12 @@ const CtaBanner = ({ message, link, btnText }) => {
         className={"btn"}
         background={"black"}
         textColor={"white"}
-        width={"180px"}
+        width={"230px"}
         to={link}
       >
         <span>
           {btnText}
-          <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "5px" }} />
+          <FontAwesomeIcon icon={faArrowRight} style={{ marginLeft: "10px" }} />
         </span>
       </Button>
     </MainDiv>

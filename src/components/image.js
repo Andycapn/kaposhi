@@ -14,9 +14,23 @@ import Img from "gatsby-image"
  */
 
 const Image = () => {
-  const { indexBg } = useStaticQuery(graphql`
+  const { indexBg, styleOne, styleTwo } = useStaticQuery(graphql`
     query {
       indexBg: file(relativePath: { eq: "indexBg.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      styleOne: file(relativePath: { eq: "style-1.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      styleTwo: file(relativePath: { eq: "style-2.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
@@ -26,7 +40,11 @@ const Image = () => {
     }
   `)
 
-  return { indexBg: indexBg.childImageSharp.fluid }
+  return {
+    indexBg: indexBg.childImageSharp.fluid,
+    styleOne: styleOne.childImageSharp.fluid,
+    styleTwo: styleTwo.childImageSharp.fluid,
+  }
 }
 
 export default Image

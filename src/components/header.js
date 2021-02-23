@@ -47,7 +47,7 @@ const Header = ({ siteTitle }) => (
             list-style: none;
             font-weight: 400;
             letter-spacing: 2px;
-            font-size: 16px;
+            font-size: 13px;
             margin: 0 10px;
           }
           a {

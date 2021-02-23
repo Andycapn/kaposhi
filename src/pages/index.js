@@ -10,6 +10,8 @@ import Button from "../components/button"
 import bannerVideo from "../images/Urban Wear Store.mp4"
 import { CtaBanner } from "../components/ctaBanner"
 import Image from "../components/image"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const IndexPage = () => {
   const { allShopifyProduct } = useStaticQuery(graphql`
@@ -114,12 +116,21 @@ const IndexPage = () => {
                 description={product.description}
                 price={product.priceRange}
                 productType={product.productType}
+                product={product}
               />
             ) : null
           })}
         </div>
       </MainDiv>
-      <MainDiv>
+      <MainDiv
+        css={css`
+          .new-releases-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(309px, 300px));
+            grid-column-gap: 15px;
+          }
+        `}
+      >
         <h3>New Releases</h3>
         <div className="new-releases-row">
           {allShopifyProduct.nodes.map((product, index) => {
@@ -133,15 +144,65 @@ const IndexPage = () => {
                 description={product.description}
                 price={product.priceRange}
                 productType={product.productType}
+                product={product}
               />
             ) : null
           })}
         </div>
       </MainDiv>
+      <MainDiv
+        css={css`
+          .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 49%));
+            grid-column-gap: 10px;
+            margin-bottom: 30px;
+            & > section {
+              background-color: lightslategray;
+              height: 500px;
+
+              & > div {
+                height: 100%;
+                margin-bottom: 10px;
+              }
+              & > a {
+                font-family: "Prompt", sans-serif;
+                text-transform: uppercase;
+                font-size: 16px;
+                text-decoration: underline;
+              }
+            }
+          }
+        `}
+      >
+        <h3>Latest Styles</h3>
+        <div className="container">
+          <section>
+            <ImageBackground
+              className="image-bg"
+              tag={"div"}
+              fluid={Image().styleOne}
+            />
+            <a>
+              Shop These Styles <FontAwesomeIcon icon={faArrowRight} />
+            </a>
+          </section>
+          <section>
+            <ImageBackground
+              className="image-bg"
+              tag={"div"}
+              fluid={Image().styleTwo}
+            />
+            <a>
+              Shop These Styles <FontAwesomeIcon icon={faArrowRight} />
+            </a>
+          </section>
+        </div>
+      </MainDiv>
       <CtaBanner
-        message={"Join Our Creator's Club And Get 15% Off"}
+        message={"Join Our Creator's Club & Get 15% Off."}
         link={"#"}
-        btnText={`Learn More`}
+        btnText={`Sign Up For Free`}
       />
     </Layout>
   )

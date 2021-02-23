@@ -10,7 +10,7 @@ const Button = ({ children, background, textColor, width }) => {
         left: 5px;
         width: ${width === undefined ? "200px" : width};
         margin-top: 30px;
-        padding: 26px 4px 16px 30px;
+        padding: 26px 2px 15px 30px;
         border: 2px solid ${background};
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
         & > .button {
@@ -22,7 +22,7 @@ const Button = ({ children, background, textColor, width }) => {
           color: ${textColor};
           margin: -37px 0px -25px -37px;
           padding: 12.5px 15px 15px 15px;
-          transition: 100ms ease-in-out;
+          transition: 75ms ease-in-out;
           text-decoration: none;
           font-family: "Prompt", sans-serif;
           text-transform: uppercase;
