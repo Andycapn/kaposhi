@@ -28,10 +28,12 @@ const Header = ({ siteTitle }) => {
           height: 100%;
           background-color: white;
           z-index: 200;
-          display: ${state.drawerOpen === true ? "flex" : "none"};
+          display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          transform: translateX(-100%);
+          transition: 200ms ease-in;
           & > .nav-items {
             margin-bottom: 0;
             & > .nav-item {
@@ -49,8 +51,11 @@ const Header = ({ siteTitle }) => {
             color: black;
           }
         }
+        & > .sidebar.open {
+          transform: translateX(0px);
+        }
         & > .backdrop {
-          display: ${state.drawerOpen === true ? "block" : "none"};
+          display: none;
           z-index: 100;
           position: fixed;
           top: 0;
@@ -58,6 +63,12 @@ const Header = ({ siteTitle }) => {
           background: rgba(0, 0, 0, 0.7);
           height: 100%;
           width: 100%;
+          opacity: 0;
+          transition: 300ms ease-in;
+        }
+        & > .backdrop.open {
+          display: block;
+          opacity: 1;
         }
       `}
     >
@@ -152,7 +163,7 @@ const Header = ({ siteTitle }) => {
           </li>
         </ul>
       </nav>
-      <div className="sidebar">
+      <div className={`sidebar ${state.drawerOpen ? "open" : ""}`}>
         <ul className="nav-items">
           <li className="nav-item">
             <a href="">MENSWEAR</a>
@@ -165,7 +176,10 @@ const Header = ({ siteTitle }) => {
           </li>
         </ul>
       </div>
-      <div className="backdrop" onClick={handleBackdropClick} />
+      <div
+        className={`backdrop ${state.drawerOpen ? "open" : ""}`}
+        onClick={handleBackdropClick}
+      />
     </header>
   )
 }

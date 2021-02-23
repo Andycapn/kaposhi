@@ -113,7 +113,6 @@ const IndexPage = () => {
             }
             @media screen and (min-width: 1440px) {
             }
-    
           }
         `}
       >
@@ -147,14 +146,11 @@ const IndexPage = () => {
       <MainDiv
         css={css`
           .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 49%));
-            grid-column-gap: 10px;
             margin-bottom: 30px;
             & > section {
               background-color: lightslategray;
-              height: 500px;
-
+              height: 325px;
+              margin: 40px auto;
               & > div {
                 height: 100%;
                 margin-bottom: 10px;
@@ -165,6 +161,14 @@ const IndexPage = () => {
                 font-size: 16px;
                 text-decoration: underline;
               }
+            }
+          }
+          @media screen and (min-width: 768px) {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 49%));
+            grid-column-gap: 10px;
+            & > section {
+              height: 500px;
             }
           }
         `}

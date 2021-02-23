@@ -8,8 +8,6 @@ const Footer = () => {
   return (
     <MainDiv
       css={css`
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
         font-family: "Prompt", sans-serif;
         justify-content: center;
         margin-top: 2em;
@@ -30,6 +28,10 @@ const Footer = () => {
             color: #332e30;
             font-size: 16px;
           }
+        }
+        @media screen and (min-width: 768px) {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
         }
       `}
     >
