@@ -100,6 +100,20 @@ const IndexPage = () => {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(309px, 300px));
             grid-column-gap: 15px;
+            justify-content: center;
+            @media screen and (min-width: 425px) {
+            }
+            @media screen and (min-width: 600px) {
+            }
+            @media screen and (min-width: 768px) {
+            }
+            @media screen and (min-width: 1024px) {
+            }
+            @media screen and (min-width: 1366px) {
+            }
+            @media screen and (min-width: 1440px) {
+            }
+    
           }
         `}
       >
@@ -107,17 +121,7 @@ const IndexPage = () => {
         <div className="popular-products-row">
           {allShopifyProduct.nodes.map((product, index) => {
             return product.tags.includes("Popular") ? (
-              <ProductCard
-                key={index}
-                image={
-                  product.images[0].localFile.childImageSharp.fixed.srcWebp
-                }
-                title={product.title}
-                description={product.description}
-                price={product.priceRange}
-                productType={product.productType}
-                product={product}
-              />
+              <ProductCard key={index} product={product} />
             ) : null
           })}
         </div>
@@ -135,17 +139,7 @@ const IndexPage = () => {
         <div className="new-releases-row">
           {allShopifyProduct.nodes.map((product, index) => {
             return product.tags.includes("New Releases") ? (
-              <ProductCard
-                key={index}
-                image={
-                  product.images[0].localFile.childImageSharp.fixed.srcWebp
-                }
-                title={product.title}
-                description={product.description}
-                price={product.priceRange}
-                productType={product.productType}
-                product={product}
-              />
+              <ProductCard key={index} product={product} />
             ) : null
           })}
         </div>
