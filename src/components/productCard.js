@@ -1,14 +1,7 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-const ProductCard = ({
-  image,
-  title,
-  description,
-  price,
-  productType,
-  product,
-}) => {
+const ProductCard = ({ product }) => {
   // Truncate description Text
   const truncate = str => {
     return str.length > 20 ? str.substring(0, 78) + "..." : str
@@ -45,14 +38,18 @@ const ProductCard = ({
         }
       `}
     >
-      <img className="product-image" src={image} alt={title} />
+      <img
+        className="product-image"
+        src={product.images[0].localFile.childImageSharp.fixed.srcWebp}
+        alt={product.title}
+      />
       <div className="content-container">
-        <p className="product-type">{productType}</p>
+        <p className="product-type">{product.productType}</p>
         <h5 className="title">{product.title}</h5>
         <h5 className="price">
-          {price.maxVariantPrice.currencyCode} {price.maxVariantPrice.amount}
+          {product.priceRange.maxVariantPrice.currencyCode}{" "}
+          {product.priceRange.maxVariantPrice.amount}
         </h5>
-        <pre>{JSON.stringify(product)}</pre>
       </div>
     </div>
   )
