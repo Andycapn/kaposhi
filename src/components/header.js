@@ -92,7 +92,7 @@ const Header = ({ siteTitle }) => {
           & > .hamburger {
             margin-left: auto;
           }
-          padding: 5vh calc((100vw - 345px) / 2) 0.5rem;
+          padding: 0.5rem calc((100vw - 345px) / 2) 0.5rem;
           @media screen and (min-width: 425px) {
             padding: 0.7rem calc((100vw - 400px) / 2);
           }

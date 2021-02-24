@@ -65,14 +65,22 @@ const IndexPage = () => {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(500px, 700px));
             grid-template-rows: 1fr 1fr;
+            box-sizing: border-box;
+            overflow: hidden;
             & > .container {
               grid-row: 2/3;
+              width: 100%;
               & > .main-title {
                 font-family: "adineue PRO Bold Web", sans-serif;
                 color: white;
-                font-size: 42px;
                 text-transform: uppercase;
                 font-weight: 500;
+                display: inline-block;
+              }
+              @media screen and (min-width: 760px) {
+                & > .main-title {
+                  font-size: 42px;
+                }
               }
               & > .btn-container {
               }
