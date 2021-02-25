@@ -12,19 +12,17 @@ const ProductCard = ({ product }) => {
       className="card"
       css={css`
         width: 310px;
-
+        & * {
+          font-family: "Prompt", sans-serif;
+        }
         & > .product-image {
           height: 60%;
           width: 100%;
           object-fit: cover;
         }
-
         & > .content-container {
           padding: 0 10px;
           & > .product-type {
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-              sans-serif;
             color: lightslategray;
             font-size: 13px;
             margin-bottom: 0;

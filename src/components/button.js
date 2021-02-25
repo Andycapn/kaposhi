@@ -1,14 +1,14 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-const Button = ({ children, background, textColor, width }) => {
+const Button = ({ children, background, textColor, width, mbWidth }) => {
   return (
     <div
       css={css`
         position: relative;
         display: block;
         left: 5px;
-        width: ${width === undefined ? "200px" : width};
+        width: ${mbWidth === undefined ? "150px" : mbWidth};
         margin-top: 30px;
         padding: 26px 2px 15px 30px;
         border: 2px solid ${background};
@@ -27,9 +27,14 @@ const Button = ({ children, background, textColor, width }) => {
           font-family: "Prompt", sans-serif;
           text-transform: uppercase;
           font-weight: bold;
-          font-size: 16px;
+          font-size: 12px;
         }
-
+        @media screen and (min-width: 768px) {
+          width: ${width === undefined ? "200px" : width};
+          & > .button {
+            font-size: 16px;
+          }
+        }
         & > .button:active {
           transform: translateY(5px) translateX(5px);
         }

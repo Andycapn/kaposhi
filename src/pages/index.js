@@ -109,18 +109,6 @@ const IndexPage = () => {
             grid-template-columns: repeat(auto-fill, minmax(309px, 300px));
             grid-column-gap: 15px;
             justify-content: center;
-            @media screen and (min-width: 425px) {
-            }
-            @media screen and (min-width: 600px) {
-            }
-            @media screen and (min-width: 768px) {
-            }
-            @media screen and (min-width: 1024px) {
-            }
-            @media screen and (min-width: 1366px) {
-            }
-            @media screen and (min-width: 1440px) {
-            }
           }
         `}
       >
@@ -139,6 +127,7 @@ const IndexPage = () => {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(309px, 300px));
             grid-column-gap: 15px;
+            justify-content: center;
           }
         `}
       >
@@ -158,6 +147,7 @@ const IndexPage = () => {
             & > section {
               background-color: lightslategray;
               height: 325px;
+
               margin: 40px auto;
               & > div {
                 height: 100%;
@@ -170,13 +160,14 @@ const IndexPage = () => {
                 text-decoration: underline;
               }
             }
-          }
-          @media screen and (min-width: 768px) {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 49%));
-            grid-column-gap: 10px;
-            & > section {
-              height: 500px;
+            @media screen and (min-width: 768px) {
+              display: grid;
+              grid-template-columns: repeat(auto-fill, minmax(48%, 49%));
+              grid-column-gap: 10px;
+              & > section {
+                margin: 40px 0;
+                height: 500px;
+              }
             }
           }
         `}

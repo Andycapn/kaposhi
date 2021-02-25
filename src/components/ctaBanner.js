@@ -23,6 +23,7 @@ const CtaBanner = ({ message, link, btnText }) => {
         background={"black"}
         textColor={"white"}
         width={"230px"}
+        mbWidth={"180px"}
         to={link}
       >
         <span>

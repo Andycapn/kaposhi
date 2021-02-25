@@ -35,14 +35,15 @@ const Header = ({ siteTitle }) => {
           transform: translateX(-100%);
           transition: 200ms ease-in;
           & > .nav-items {
-            margin-bottom: 0;
+            margin: 0;
+            padding: 0;
             & > .nav-item {
               font-family: "Prompt", sans-serif;
               list-style: none;
               font-weight: 400;
               letter-spacing: 2px;
-              font-size: 13px;
-              margin: 0 10px;
+              font-size: 16px;
+              margin: 10px 0;
             }
           }
 
@@ -92,6 +93,16 @@ const Header = ({ siteTitle }) => {
           & > .hamburger {
             margin-left: auto;
           }
+          & > .logo {
+            color: white;
+            text-decoration: none;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+              sans-serif;
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-size: 13px;
+          }
           padding: 0.5rem calc((100vw - 345px) / 2) 0.5rem;
           @media screen and (min-width: 425px) {
             padding: 0.7rem calc((100vw - 400px) / 2);
@@ -121,6 +132,9 @@ const Header = ({ siteTitle }) => {
                 color: whitesmoke;
               }
             }
+            & > .logo {
+              font-size: 16px;
+            }
           }
           @media screen and (min-width: 1024px) {
             padding: 1rem calc((100vw - 960px) / 2);
@@ -130,15 +144,6 @@ const Header = ({ siteTitle }) => {
           }
           @media screen and (min-width: 1440px) {
             padding: 1.5rem calc((100vw - 1300px) / 2);
-          }
-          & > .logo {
-            color: white;
-            text-decoration: none;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-              sans-serif;
-            letter-spacing: 1px;
-            font-weight: bold;
           }
         `}
       >
