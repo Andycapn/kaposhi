@@ -12,6 +12,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import Footer from "./footer"
+import { config } from "@fortawesome/fontawesome-svg-core"
+config.autoAddCss = false
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
