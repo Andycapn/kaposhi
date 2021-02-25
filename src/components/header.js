@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
 const Header = ({ siteTitle }) => {
   const [state, setState] = useState({
@@ -24,7 +24,7 @@ const Header = ({ siteTitle }) => {
         & > .sidebar {
           position: fixed;
           top: 0;
-          width: 70%;
+          width: 100%;
           height: 100%;
           background-color: white;
           z-index: 200;
@@ -33,7 +33,13 @@ const Header = ({ siteTitle }) => {
           justify-content: center;
           align-items: center;
           transform: translateX(-100%);
-          transition: 200ms ease-in;
+          transition: 200ms ease-out;
+          & > .close-icon {
+            position: Absolute;
+            top: 20px;
+            left: 90%;
+            cursor: pointer;
+          }
           & > .nav-items {
             margin: 0;
             padding: 0;
@@ -169,6 +175,12 @@ const Header = ({ siteTitle }) => {
         </ul>
       </nav>
       <div className={`sidebar ${state.drawerOpen ? "open" : ""}`}>
+        <FontAwesomeIcon
+          icon={faTimes}
+          size={"lg"}
+          className="close-icon"
+          onClick={handleDrawerToggle}
+        />
         <ul className="nav-items">
           <li className="nav-item">
             <a href="">MENSWEAR</a>

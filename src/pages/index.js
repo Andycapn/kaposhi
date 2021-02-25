@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -7,7 +6,6 @@ import ProductCard from "../components/productCard"
 import { ImageBackground, MainDiv } from "../components/MyStyledComponents"
 import { css } from "@emotion/react"
 import Button from "../components/button"
-import bannerVideo from "../images/Urban Wear Store.mp4"
 import { CtaBanner } from "../components/ctaBanner"
 import Image from "../components/image"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
@@ -63,7 +61,7 @@ const IndexPage = () => {
             height: 106vh;
             margin-top: -7vh;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 700px));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
             grid-template-rows: 1fr 1fr;
             box-sizing: border-box;
             overflow: hidden;
@@ -75,14 +73,12 @@ const IndexPage = () => {
                 color: white;
                 text-transform: uppercase;
                 font-weight: 500;
-                display: inline-block;
+                font-size: 52px;
               }
-              @media screen and (min-width: 760px) {
-                & > .main-title {
-                  font-size: 42px;
-                }
-              }
-              & > .btn-container {
+            }
+            @media screen and (min-width: 768px) {
+              & > .container > .main-title {
+                font-size: 42px;
               }
             }
           }

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faFire } from "@fortawesome/free-solid-svg-icons"
 import New from "../images/new-product.svg"
 import { faAirbnb } from "@fortawesome/free-brands-svg-icons"
+import Img from "gatsby-image"
 
 const ProductCard = ({ product }) => {
   // Truncate description Text

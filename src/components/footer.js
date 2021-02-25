@@ -11,6 +11,7 @@ const Footer = () => {
         font-family: "Prompt", sans-serif;
         justify-content: center;
         margin-top: 2em;
+
         & > section {
           display: flex;
           flex-direction: column;
@@ -21,6 +22,27 @@ const Footer = () => {
           }
           .icon {
             margin: 0 10px;
+          }
+
+          .icon.fa-instagram {
+            background: radial-gradient(
+              circle at 30% 107%,
+              #fdf497 0%,
+              #fdf497 5%,
+              #fd5949 45%,
+              #d6249f 60%,
+              #285aeb 90%
+            );
+            background: -webkit-radial-gradient(
+              circle at 30% 107%,
+              #fdf497 0%,
+              #fdf497 5%,
+              #fd5949 45%,
+              #d6249f 60%,
+              #285aeb 90%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
           }
 
           .footer-link {
@@ -106,7 +128,11 @@ const Footer = () => {
             size={"2x"}
             color={"blue"}
           />
-          <FontAwesomeIcon className="icon" icon={faInstagram} size={"2x"} />
+          <FontAwesomeIcon
+            className="icon instagram"
+            icon={faInstagram}
+            size={"2x"}
+          />
         </p>
       </section>
       <section
