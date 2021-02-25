@@ -26,6 +26,7 @@ const ProductCard = ({ product }) => {
             height: 60%;
             width: 100%;
             object-fit: cover;
+            margin-bottom: 10px;
           }
           & > .tag {
             position: absolute;

@@ -103,7 +103,7 @@ const IndexPage = () => {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(309px, 300px));
             grid-column-gap: 15px;
-            grid-row-gap: 15px;
+            grid-row-gap: 50px;
             justify-content: center;
           }
         `}
@@ -123,7 +123,7 @@ const IndexPage = () => {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(309px, 300px));
             grid-column-gap: 15px;
-            grid-row-gap: 15px;
+            grid-row-gap: 50px;
             justify-content: center;
           }
         `}

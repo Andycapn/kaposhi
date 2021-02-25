@@ -116,8 +116,11 @@ const Footer = () => {
         <a href="#" className="footer-link">
           Privacy Policy
         </a>
+        <a href="#" className="footer-link">
+          Refund Policy
+        </a>
         <a href="#" className="footer-link" style={{ marginBottom: "20px" }}>
-          Zambia Revenue Authority
+          Shipping Policy
         </a>
         <h5 style={{ marginBottom: "10px" }}>Social</h5>
         <p>
