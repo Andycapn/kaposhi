@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFire } from "@fortawesome/free-solid-svg-icons"
+import { faFire, faPaperPlane } from "@fortawesome/free-solid-svg-icons"
 import New from "../images/new-product.svg"
 import { faAirbnb } from "@fortawesome/free-brands-svg-icons"
 import Img from "gatsby-image"
@@ -72,7 +72,7 @@ const ProductCard = ({ product }) => {
                   product.tags[0] === "Popular"
                     ? faFire
                     : product.tags[0] === "New Releases"
-                    ? faAirbnb
+                    ? faPaperPlane
                     : null
                 }
                 style={{ margin: "0 5px" }}

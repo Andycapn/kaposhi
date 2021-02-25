@@ -30,15 +30,12 @@ const Header = ({ siteTitle }) => {
           z-index: 200;
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          align-items: center;
           transform: translateX(-100%);
           transition: 200ms ease-out;
+          padding: 2rem;
           & > .close-icon {
-            position: Absolute;
-            top: 20px;
-            left: 90%;
             cursor: pointer;
+            margin-left: auto;
           }
           & > .nav-items {
             margin: 0;
@@ -47,8 +44,8 @@ const Header = ({ siteTitle }) => {
               font-family: "Prompt", sans-serif;
               list-style: none;
               font-weight: 400;
-              letter-spacing: 2px;
-              font-size: 16px;
+              letter-spacing: 1.5px;
+              font-size: 14px;
               margin: 10px 0;
             }
           }
@@ -88,24 +85,19 @@ const Header = ({ siteTitle }) => {
           width: 100vw;
           max-height: 7vh;
           align-items: center;
-          background: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.5) 20%,
-            rgba(0, 0, 0, 0.5046393557422969) 100%
-          );
+          background-color: white;
           & > .nav-items {
             display: none;
           }
           & > .hamburger {
             margin-left: auto;
+            color: black;
           }
           & > .logo {
-            color: white;
+            color: black;
             text-decoration: none;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-              sans-serif;
-            letter-spacing: 1px;
+            font-family: "Prompt", sans-serif;
+            letter-spacing: 2px;
             font-weight: bold;
             font-size: 13px;
           }
@@ -135,7 +127,7 @@ const Header = ({ siteTitle }) => {
               }
               a {
                 text-decoration: none;
-                color: whitesmoke;
+                color: black;
               }
             }
             & > .logo {
@@ -160,6 +152,7 @@ const Header = ({ siteTitle }) => {
           icon={faBars}
           color={"white"}
           className="hamburger"
+          size={"lg"}
           onClick={handleDrawerToggle}
         />
         <ul className="nav-items">
@@ -180,6 +173,7 @@ const Header = ({ siteTitle }) => {
           size={"lg"}
           className="close-icon"
           onClick={handleDrawerToggle}
+          color={"black"}
         />
         <ul className="nav-items">
           <li className="nav-item">

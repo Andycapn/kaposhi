@@ -59,7 +59,6 @@ const IndexPage = () => {
           .content {
             width: 100%;
             height: 106vh;
-            margin-top: -7vh;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
             grid-template-rows: 1fr 1fr;
