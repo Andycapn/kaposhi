@@ -194,9 +194,9 @@ const IndexPage = () => {
         </div>
       </MainDiv>
       <CtaBanner
-        message={"Join Our Creator's Club & Get 15% Off."}
+        message={"Follow Our Social Media Pages For Exclusive Deals!"}
         link={"#"}
-        btnText={`Sign Up For Free`}
+        btnText={`Follow us now`}
       />
     </Layout>
   )

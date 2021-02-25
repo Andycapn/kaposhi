@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
             top: 0;
             left: 0;
             z-index: 5;
-            background-color: yellow;
+            background-color: #ffff05;
             padding: 0.1rem 0.5rem;
             p {
               font-size: 12px;

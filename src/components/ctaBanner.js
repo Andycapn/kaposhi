@@ -9,7 +9,7 @@ const CtaBanner = ({ message, link, btnText }) => {
   return (
     <MainDiv
       css={css`
-        background-color: yellow;
+        background-color: #ffff05;
         padding-bottom: 40px;
         h3 {
           font-family: "Prompt", sans-serif;

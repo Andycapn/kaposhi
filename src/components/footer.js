@@ -1,7 +1,13 @@
 import React from "react"
 import { FooterTag, MainDiv } from "./MyStyledComponents"
 import { css } from "@emotion/react"
-import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons"
+import {
+  faCcMastercard,
+  faCcVisa,
+  faFacebook,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Footer = () => {
@@ -15,6 +21,7 @@ const Footer = () => {
         & > section {
           display: flex;
           flex-direction: column;
+          margin-bottom: 20px;
           & > h5 {
             font-family: "Prompt", sans-serif;
             text-transform: uppercase;
@@ -24,36 +31,28 @@ const Footer = () => {
             margin: 0 10px;
           }
 
-          .icon.fa-instagram {
-            background: radial-gradient(
-              circle at 30% 107%,
-              #fdf497 0%,
-              #fdf497 5%,
-              #fd5949 45%,
-              #d6249f 60%,
-              #285aeb 90%
-            );
-            background: -webkit-radial-gradient(
-              circle at 30% 107%,
-              #fdf497 0%,
-              #fdf497 5%,
-              #fd5949 45%,
-              #d6249f 60%,
-              #285aeb 90%
-            );
-            background-clip: text;
-            -webkit-background-clip: text;
-          }
-
           .footer-link {
             text-decoration: none;
             color: #332e30;
             font-size: 16px;
           }
+
+          .partners-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .p-icon {
+              margin: 20px 5px 5px 5px;
+            }
+          }
         }
         @media screen and (min-width: 768px) {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+          grid-template-columns: repeat(auto-fill, minmax(300px, 350px));
+          & > .section {
+            margin-bottom: unset;
+          }
         }
       `}
     >
@@ -133,6 +132,12 @@ const Footer = () => {
             icon={faInstagram}
             size={"2x"}
           />
+          <FontAwesomeIcon
+            className="icon instagram"
+            icon={faYoutube}
+            size={"2x"}
+            color={"red"}
+          />
         </p>
       </section>
       <section
@@ -141,11 +146,20 @@ const Footer = () => {
           gridRow: "2/3",
           textAlign: "center",
           fontSize: "12px",
+          marginBottom: "0",
         }}
       >
-        © {new Date().getFullYear()}, Urbanwear Zambia
+        © {new Date().getFullYear()}, Urbanwear Zambia.
         <br />
         Website Designed & Developed By Axon Zambia.
+        <div className="partners-row">
+          <FontAwesomeIcon className={"p-icon"} icon={faCcVisa} size={"2x"} />
+          <FontAwesomeIcon
+            className={"p-icon"}
+            icon={faCcMastercard}
+            size={"2x"}
+          />
+        </div>
       </section>
     </MainDiv>
   )
