@@ -152,9 +152,12 @@ const Footer = () => {
           marginBottom: "0",
         }}
       >
-        © {new Date().getFullYear()}, Urbanwear Zambia.
+        © {new Date().getFullYear()}, Andrew Ndhlovu.
         <br />
-        Website Designed & Developed By Axon Zambia.
+        <span>
+          Website Designed & Developed By{" "}
+          <a href="https://andrewndhlovu.me">Andrew Ndhlovu</a>.
+        </span>
         <div className="partners-row">
           <FontAwesomeIcon className={"p-icon"} icon={faCcVisa} size={"2x"} />
           <FontAwesomeIcon
