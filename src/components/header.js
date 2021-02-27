@@ -145,9 +145,9 @@ const Header = ({ siteTitle }) => {
           }
         `}
       >
-        <a href="" className="logo">
+        <Link to="/" className="logo">
           URBANWEAR
-        </a>
+        </Link>
         <FontAwesomeIcon
           icon={faBars}
           color={"white"}
