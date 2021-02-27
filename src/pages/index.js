@@ -19,6 +19,7 @@ const IndexPage = () => {
           title
           tags
           productType
+          handle
           priceRange {
             maxVariantPrice {
               amount
@@ -111,7 +112,7 @@ const IndexPage = () => {
         <h3>Popular Items</h3>
         <div className="popular-products-row">
           {allShopifyProduct.nodes.map((product, index) => {
-            return product.tags.includes("Popular") ? (
+            return product.tags.includes("Popular") && index < 8 ? (
               <ProductCard key={index} product={product} />
             ) : null
           })}
@@ -131,7 +132,7 @@ const IndexPage = () => {
         <h3>New Releases</h3>
         <div className="new-releases-row">
           {allShopifyProduct.nodes.map((product, index) => {
-            return product.tags.includes("New Releases") ? (
+            return product.tags.includes("New Releases") && index < 8 ? (
               <ProductCard key={index} product={product} />
             ) : null
           })}
