@@ -58,9 +58,7 @@ const Footer = () => {
     >
       <section>
         <h5>Products</h5>
-        <a className="footer-link" href="">
-          Shoes
-        </a>
+
         <a className="footer-link" href="">
           Clothing
         </a>
@@ -84,13 +82,13 @@ const Footer = () => {
       <section>
         <h5>Collections</h5>
         <a href="#" className="footer-link">
-          Adidas
+          Agility
         </a>
         <a href="#" className="footer-link">
-          Nike
+          Gladiator
         </a>
         <a href="#" className="footer-link">
-          Converse
+          Seamless
         </a>
       </section>
       <section>

@@ -139,62 +139,87 @@ const IndexPage = () => {
           })}
         </div>
       </MainDiv>
-      <MainDiv
+      <div
         css={css`
+          .content {
+            padding-bottom: 0;
+          }
           .container {
-            margin-bottom: 30px;
             & > section {
               background-color: lightslategray;
-              height: 325px;
-
-              margin: 40px auto;
+              height: 500px;
               & > div {
                 height: 100%;
-                margin-bottom: 10px;
               }
-              & > a {
-                font-family: "Prompt", sans-serif;
+              a {
+                font-family: "adineue PRO Bold Web", sans-serif;
                 text-transform: uppercase;
-                font-size: 16px;
-                text-decoration: underline;
+                font-size: 18px;
+                padding: 10px;
+                text-decoration: none;
+                color: white;
+                position: absolute;
+                bottom: 0;
               }
+
+              .icon {
+                margin: 0 5px;
+              }
+            }
+            section:hover a {
+              opacity: 1;
+              background: rgb(0, 0, 0);
+              background: linear-gradient(
+                29deg,
+                rgba(0, 0, 0, 0.6937149859943977) 0%,
+                rgba(255, 255, 255, 0) 65%
+              );
             }
             @media screen and (min-width: 768px) {
               display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(48%, 49%));
-              grid-column-gap: 10px;
+              grid-template-columns: repeat(auto-fill, minmax(48%, 1fr));
               & > section {
-                margin: 40px 0;
-                height: 500px;
+                margin: 0px 0;
+                height: 800px;
+                a {
+                  opacity: 0;
+                  transition: ease-out 100ms;
+                }
               }
             }
           }
         `}
       >
-        <h3>Latest Styles</h3>
+        <MainDiv className="content">
+          <h3>Latest Styles</h3>
+        </MainDiv>
         <div className="container">
           <section>
             <ImageBackground
               className="image-bg"
               tag={"div"}
               fluid={Image().styleOne}
-            />
-            <a>
-              Shop These Styles <FontAwesomeIcon icon={faArrowRight} />
-            </a>
+            >
+              <a>
+                Shop These Styles
+                <FontAwesomeIcon className={"icon"} icon={faArrowRight} />
+              </a>
+            </ImageBackground>
           </section>
           <section>
             <ImageBackground
               className="image-bg"
               tag={"div"}
               fluid={Image().styleTwo}
-            />
-            <a>
-              Shop These Styles <FontAwesomeIcon icon={faArrowRight} />
-            </a>
+            >
+              <a>
+                Shop These Styles
+                <FontAwesomeIcon className={"icon"} icon={faArrowRight} />
+              </a>
+            </ImageBackground>
           </section>
         </div>
-      </MainDiv>
+      </div>
       <CtaBanner
         message={"Follow Our Social Media Pages For Exclusive Deals!"}
         link={"#"}

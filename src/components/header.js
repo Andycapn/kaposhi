@@ -3,7 +3,12 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faSearch, faShoppingCart, faTimes } from "@fortawesome/free-solid-svg-icons"
+import {
+  faBars,
+  faSearch,
+  faShoppingCart,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons"
 
 const Header = ({ siteTitle, dark }) => {
   const [state, setState] = useState({
@@ -52,7 +57,7 @@ const Header = ({ siteTitle, dark }) => {
 
           a {
             text-decoration: none;
-            color: ${dark === true ? "white" : "black"};
+            color: black;
           }
         }
         & > .sidebar.open {
@@ -96,7 +101,7 @@ const Header = ({ siteTitle, dark }) => {
           & > .logo {
             color: ${dark ? "white" : "black"};
             text-decoration: none;
-            font-family: 'adineue PRO Bold Web', sans-serif;
+            font-family: "adineue PRO Bold Web", sans-serif;
             letter-spacing: 2px;
             font-weight: bold;
             font-size: 13px;
@@ -157,10 +162,14 @@ const Header = ({ siteTitle, dark }) => {
         />
         <ul className="nav-items">
           <li className="nav-item">
-            <a href=""><FontAwesomeIcon icon={faSearch} size={"lg"}/></a>
+            <a href="">
+              <FontAwesomeIcon icon={faSearch} size={"lg"} />
+            </a>
           </li>
           <li className="nav-item">
-            <a href=""><FontAwesomeIcon icon={faShoppingCart} size={"lg"}/></a>
+            <a href="">
+              <FontAwesomeIcon icon={faShoppingCart} size={"lg"} />
+            </a>
           </li>
           <li className="nav-item">
             <a href="">NEW ARRIVALS</a>
