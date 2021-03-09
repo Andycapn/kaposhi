@@ -47,7 +47,7 @@ const IndexPage = () => {
     }
   `)
   return (
-    <Layout>
+    <Layout dark={true}>
       <SEO title="Home" />
       <ImageBackground
         className="main-banner"
@@ -57,6 +57,7 @@ const IndexPage = () => {
           Image().indexBg,
         ]}
         css={css`
+          margin-top: -7vh;
           .content {
             width: 100%;
             height: 106vh;
@@ -86,7 +87,7 @@ const IndexPage = () => {
       >
         <MainDiv className="content">
           <div className="container">
-            <h1 className="main-title">Own Your Style.</h1>
+            <h1 className="main-title">Faith. Believe. Achieve.</h1>
             <span className="btn-container">
               <Button background={"white"} textColor={"black"}>
                 Shop Men's
@@ -132,7 +133,7 @@ const IndexPage = () => {
         <h3>New Releases</h3>
         <div className="new-releases-row">
           {allShopifyProduct.nodes.map((product, index) => {
-            return product.tags.includes("New Releases") && index < 8 ? (
+            return product.tags.includes("New Release") && index < 8 ? (
               <ProductCard key={index} product={product} />
             ) : null
           })}

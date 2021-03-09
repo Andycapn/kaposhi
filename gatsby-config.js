@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        shopName: "Urbanwearzm",
+        shopName: "delamonda-apparel",
         accessToken: process.env.SHOPIFY_STORE,
         apiVersion: "2020-01",
         verbose: true,

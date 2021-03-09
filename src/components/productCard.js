@@ -80,7 +80,7 @@ const ProductCard = ({ product }) => {
                   icon={
                     product.tags[0] === "Popular"
                       ? faFire
-                      : product.tags[0] === "New Releases"
+                      : product.tags[0] === "New Release"
                       ? faPaperPlane
                       : null
                   }

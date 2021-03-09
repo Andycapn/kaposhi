@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { css } from "@emotion/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faSearch, faShoppingCart, faTimes } from "@fortawesome/free-solid-svg-icons"
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, dark }) => {
   const [state, setState] = useState({
     drawerOpen: false,
   })
@@ -52,7 +52,7 @@ const Header = ({ siteTitle }) => {
 
           a {
             text-decoration: none;
-            color: black;
+            color: ${dark === true ? "white" : "black"};
           }
         }
         & > .sidebar.open {
@@ -79,24 +79,24 @@ const Header = ({ siteTitle }) => {
       <nav
         css={css`
           z-index: 100;
-          position: fixed;
+          position: absolute;
           top: 0;
           display: flex;
           width: 100vw;
           max-height: 7vh;
           align-items: center;
-          background-color: white;
+          background-color: transparent;
           & > .nav-items {
             display: none;
           }
           & > .hamburger {
             margin-left: auto;
-            color: black;
+            color: ${dark ? "white" : "black"};
           }
           & > .logo {
-            color: black;
+            color: ${dark ? "white" : "black"};
             text-decoration: none;
-            font-family: "Prompt", sans-serif;
+            font-family: 'adineue PRO Bold Web', sans-serif;
             letter-spacing: 2px;
             font-weight: bold;
             font-size: 13px;
@@ -122,12 +122,12 @@ const Header = ({ siteTitle }) => {
                 list-style: none;
                 font-weight: 400;
                 letter-spacing: 2px;
-                font-size: 13px;
+                font-size: 16px;
                 margin: 0 10px;
               }
               a {
                 text-decoration: none;
-                color: black;
+                color: ${dark ? "white" : "black"};
               }
             }
             & > .logo {
@@ -146,7 +146,7 @@ const Header = ({ siteTitle }) => {
         `}
       >
         <Link to="/" className="logo">
-          URBANWEAR
+          DELAMODA
         </Link>
         <FontAwesomeIcon
           icon={faBars}
@@ -157,10 +157,10 @@ const Header = ({ siteTitle }) => {
         />
         <ul className="nav-items">
           <li className="nav-item">
-            <a href="">MENSWEAR</a>
+            <a href=""><FontAwesomeIcon icon={faSearch} size={"lg"}/></a>
           </li>
           <li className="nav-item">
-            <a href="">WOMENSWEAR</a>
+            <a href=""><FontAwesomeIcon icon={faShoppingCart} size={"lg"}/></a>
           </li>
           <li className="nav-item">
             <a href="">NEW ARRIVALS</a>
@@ -173,7 +173,7 @@ const Header = ({ siteTitle }) => {
           size={"lg"}
           className="close-icon"
           onClick={handleDrawerToggle}
-          color={"black"}
+          color={"white"}
         />
         <ul className="nav-items">
           <li className="nav-item">

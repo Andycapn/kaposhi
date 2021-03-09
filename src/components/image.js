@@ -18,19 +18,19 @@ const Image = () => {
     query {
       indexBg: file(relativePath: { eq: "indexBg.jpg" }) {
         childImageSharp {
-          fluid {
+          fluid(quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      styleOne: file(relativePath: { eq: "style-1.jpg" }) {
+      styleOne: file(relativePath: { eq: "style.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      styleTwo: file(relativePath: { eq: "style-2.jpg" }) {
+      styleTwo: file(relativePath: { eq: "style3.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
