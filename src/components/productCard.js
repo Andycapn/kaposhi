@@ -73,6 +73,7 @@ const ProductCard = ({ product }) => {
             src={product.images[0].localFile.childImageSharp.fixed.srcWebp}
             alt={product.title}
           />
+
           <div className="tag">
             <p>
               <span>
