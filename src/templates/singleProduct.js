@@ -6,7 +6,11 @@ import ImageViewer from "../components/ImageViewer"
 import { CtaBanner } from "../components/ctaBanner"
 import Button from "../components/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLock, faShippingFast } from "@fortawesome/free-solid-svg-icons"
+import {
+  faCartPlus,
+  faLock,
+  faShippingFast,
+} from "@fortawesome/free-solid-svg-icons"
 
 const SinglePost = ({ pageContext }) => {
   const { product } = pageContext
@@ -26,6 +30,9 @@ const SinglePost = ({ pageContext }) => {
                 select {
                   padding: 0.5rem 1rem;
                 }
+              }
+              a {
+                text-align: center;
               }
             }
             @media screen and (min-width: 768px) {
@@ -80,8 +87,19 @@ const SinglePost = ({ pageContext }) => {
                   </select>
                 </>
               ) : null}
-              <Button background={"black"} textColor={"white"}>
-                Add to Cart
+              <Button
+                className={"add-to-cart"}
+                background={"black"}
+                textColor={"white"}
+              >
+                <span>
+                  <FontAwesomeIcon
+                    icon={faCartPlus}
+                    size={"lg"}
+                    style={{ marginRight: "10px" }}
+                  />
+                  Add to Cart
+                </span>
               </Button>
             </form>
             <p>
