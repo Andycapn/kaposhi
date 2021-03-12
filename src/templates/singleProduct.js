@@ -1,19 +1,28 @@
-import React from "react"
+import React, { useState, useContext, useEffect } from "react"
 import Layout from "../components/layout"
 import { MainDiv } from "../components/MyStyledComponents"
 import { css } from "@emotion/react"
 import ImageViewer from "../components/ImageViewer"
 import { CtaBanner } from "../components/ctaBanner"
-import Button from "../components/button"
+import Button, { Button2 } from "../components/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faCartPlus,
   faLock,
   faShippingFast,
 } from "@fortawesome/free-solid-svg-icons"
+import ProductForm from "../components/ProductForm"
 
 const SinglePost = ({ pageContext }) => {
   const { product } = pageContext
+  const [variant, setVariant] = useState({
+    variantId: product.shopifyId,
+    quantity: 1,
+  })
+
+  const handleSelectChange = e => {
+    setVariant({ ...variant, variantId: e.target.value })
+  }
 
   return (
     <Layout>
@@ -69,39 +78,7 @@ const SinglePost = ({ pageContext }) => {
             </h4>
             <h4>Description</h4>
             <p className="description">{product.description}</p>
-            <form>
-              {product.variants.length > 1 ? (
-                <>
-                  <h4>Sizes</h4>
-                  <select name="Size" id="size-select" defaultValue={"default"}>
-                    <option value="default" disabled={true}>
-                      Select Your Size
-                    </option>
-                    {product.variants.map((variant, index) => {
-                      return (
-                        <option value={variant} key={index}>
-                          {variant.title}
-                        </option>
-                      )
-                    })}
-                  </select>
-                </>
-              ) : null}
-              <Button
-                className={"add-to-cart"}
-                background={"black"}
-                textColor={"white"}
-              >
-                <span>
-                  <FontAwesomeIcon
-                    icon={faCartPlus}
-                    size={"lg"}
-                    style={{ marginRight: "10px" }}
-                  />
-                  Add to Cart
-                </span>
-              </Button>
-            </form>
+            <ProductForm product={product} />
             <p>
               <FontAwesomeIcon
                 icon={faShippingFast}

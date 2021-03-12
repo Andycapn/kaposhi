@@ -46,6 +46,10 @@ section,
 summary {
   display: block;
 }
+
+label {
+  font-family: "adineue PRO Bold Web", sans-serif;
+}
 audio,
 canvas,
 progress,

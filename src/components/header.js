@@ -1,7 +1,9 @@
-import { Link } from "gatsby"
+import React, { useContext, useState } from "react"
+import reduce from "lodash/reduce"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
+import StoreContext from "../context/StoreContext"
 import { css } from "@emotion/react"
+import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faBars,
@@ -10,10 +12,22 @@ import {
   faTimes,
 } from "@fortawesome/free-solid-svg-icons"
 
-const Header = ({ siteTitle, dark }) => {
+const useQuantity = () => {
+  const {
+    store: { checkout },
+  } = useContext(StoreContext)
+  const items = checkout ? checkout.lineItems : []
+  const total = reduce(items, (acc, item) => acc + item.quantity, 0)
+  return [total !== 0, total]
+}
+
+const Header = ({ dark }) => {
+  const [hasItems, quantity] = useQuantity()
+
   const [state, setState] = useState({
     drawerOpen: false,
   })
+
   const handleDrawerToggle = () => {
     setState(prevState => {
       return { drawerOpen: !prevState.drawerOpen }
@@ -81,6 +95,13 @@ const Header = ({ siteTitle, dark }) => {
         }
       `}
     >
+      {/*<Container>*/}
+      {/*  <MenuLink to="/">{siteTitle}</MenuLink>*/}
+      {/*  <MenuLink to="/cart">*/}
+      {/*    {hasItems && <CartCounter>{quantity}</CartCounter>}*/}
+      {/*    Cart 🛍*/}
+      {/*  </MenuLink>*/}
+      {/*</Container>*/}
       <nav
         css={css`
           z-index: 100;
@@ -96,10 +117,10 @@ const Header = ({ siteTitle, dark }) => {
           }
           & > .hamburger {
             margin-left: auto;
-            color: ${dark ? "white" : "black"};
+            color: ${dark === true ? "white" : "black"};
           }
           & > .logo {
-            color: ${dark ? "white" : "black"};
+            color: ${dark === true ? "white" : "black"};
             text-decoration: none;
             font-family: "adineue PRO Bold Web", sans-serif;
             letter-spacing: 2px;
@@ -132,7 +153,7 @@ const Header = ({ siteTitle, dark }) => {
               }
               a {
                 text-decoration: none;
-                color: ${dark ? "white" : "black"};
+                color: ${dark === true ? "white" : "black"};
               }
             }
             & > .logo {
@@ -162,14 +183,37 @@ const Header = ({ siteTitle, dark }) => {
         />
         <ul className="nav-items">
           <li className="nav-item">
-            <a href="">
+            <Link to="/">
               <FontAwesomeIcon icon={faSearch} size={"lg"} />
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a href="">
+            <Link
+              to="/cart"
+              href=""
+              css={css`
+                position: relative;
+                .quantity {
+                  position: absolute;
+                  top: -12px;
+                  left: 12px;
+                  width: 22px;
+                  height: 22px;
+                  font-family: "adineue PRO Bold Web", sans-serif;
+                  font-size: 12px;
+                  background-color: ${dark === true ? "black" : "white"};
+                  text-align: center;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: 50%;
+                  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+                }
+              `}
+            >
               <FontAwesomeIcon icon={faShoppingCart} size={"lg"} />
-            </a>
+              {hasItems ? <div className="quantity">{quantity}</div> : null}
+            </Link>
           </li>
           <li className="nav-item">
             <a href="">NEW ARRIVALS</a>
@@ -194,6 +238,9 @@ const Header = ({ siteTitle, dark }) => {
           <li className="nav-item">
             <a href="">NEW ARRIVALS</a>
           </li>
+          {/*<li className="nav-item">*/}
+          {/*  <a href="">{count}</a>*/}
+          {/*</li>*/}
         </ul>
       </div>
       <div
@@ -202,6 +249,14 @@ const Header = ({ siteTitle, dark }) => {
       />
     </header>
   )
+}
+
+Header.propTypes = {
+  siteTitle: PropTypes.string,
+}
+
+Header.defaultProps = {
+  siteTitle: ``,
 }
 
 export default Header

@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
 import ProductCard from "../components/productCard"
 import { ImageBackground, MainDiv } from "../components/MyStyledComponents"
 import { css } from "@emotion/react"
