@@ -1,7 +1,7 @@
 import React, { useContext } from "react"
 import { Link } from "gatsby"
 
-import StoreContext from "../../../context/StoreContext"
+import StoreContext from "~/context/StoreContext"
 import { Wrapper } from "./styles"
 import Button, { Button2 } from "../../button"
 import { css } from "@emotion/react"
