@@ -4,6 +4,7 @@ import isEqual from "lodash/isEqual"
 import PropTypes from "prop-types"
 import StoreContext from "../Context/storeContext"
 import { css } from "@emotion/react"
+import { HTMLSelect } from "@blueprintjs/core"
 
 const ProductForm = ({ product }) => {
   const {
@@ -105,11 +106,9 @@ const ProductForm = ({ product }) => {
             key={id}
             onBlur={event => handleOptionChange(index, event)}
             css={css`
-              padding: 0.5rem 1rem;
               font-family: "adineue PRO Bold Web", sans-serif;
               margin: 10px 0;
-              border-radius: 4px;
-
+              padding: 0.1rem 0.5rem;
               :focus {
                 border-color: #aaa;
                 /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */

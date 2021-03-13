@@ -199,10 +199,11 @@ const Header = ({ dark }) => {
                   left: 12px;
                   width: 22px;
                   height: 22px;
-                  font-family: "adineue PRO Bold Web", sans-serif;
+                  font-family: "Prompt", sans-serif;
                   font-size: 12px;
-                  background-color: ${dark === true ? "black" : "white"};
+                  background-color: yellow;
                   text-align: center;
+                  color: black;
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -229,6 +230,9 @@ const Header = ({ dark }) => {
           color={"white"}
         />
         <ul className="nav-items">
+          <li className="nav-item">
+            <Link to="/cart">MY CART ({quantity})</Link>
+          </li>
           <li className="nav-item">
             <a href="">MENSWEAR</a>
           </li>
