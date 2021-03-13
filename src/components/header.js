@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react"
 import reduce from "lodash/reduce"
 import PropTypes from "prop-types"
-import StoreContext from "~/context/StoreContext"
+import StoreContext from "~/context/storeContext"
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
