@@ -1,10 +1,18 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-const Button = ({ children, background, textColor, width, mbWidth }) => {
+const Button = ({
+  children,
+  background,
+  textColor,
+  width,
+  mbWidth,
+  styles,
+  href,
+}) => {
   return (
     <a
-      href=""
+      href={href}
       css={css`
         background-color: ${background};
         display: block;
@@ -16,9 +24,11 @@ const Button = ({ children, background, textColor, width, mbWidth }) => {
         font-weight: bold;
         font-size: 12px;
         color: ${textColor};
-        border-radius: 4px;
         width: ${width === undefined ? "150px" : width};
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+
+        ${styles}
+
         @media screen and (min-width: 768px) {
           width: ${width === undefined ? "200px" : width};
           font-size: 16px;
@@ -30,7 +40,14 @@ const Button = ({ children, background, textColor, width, mbWidth }) => {
   )
 }
 
-const Button2 = ({ children, background, textColor, width, mbWidth }) => {
+const Button2 = ({
+  children,
+  background,
+  textColor,
+  width,
+  mbWidth,
+  styles,
+}) => {
   return (
     <a
       href=""
@@ -45,7 +62,6 @@ const Button2 = ({ children, background, textColor, width, mbWidth }) => {
         font-weight: bold;
         font-size: 12px;
         color: ${textColor};
-        border-radius: 4px;
         width: ${width === undefined ? "150px" : width};
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
         @media screen and (min-width: 768px) {
@@ -60,4 +76,3 @@ const Button2 = ({ children, background, textColor, width, mbWidth }) => {
 }
 
 export default Button
-export { Button2 }

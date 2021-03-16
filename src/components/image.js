@@ -14,25 +14,32 @@ import Img from "gatsby-image"
  */
 
 const Image = () => {
-  const { indexBg, styleOne, styleTwo } = useStaticQuery(graphql`
+  const { indexBg, styleOne, styleTwo, ribbon } = useStaticQuery(graphql`
     query {
-      indexBg: file(relativePath: { eq: "indexBg.jpg" }) {
+      indexBg: file(relativePath: { eq: "IndexBg.jpg" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      styleOne: file(relativePath: { eq: "style.jpg" }) {
+      styleOne: file(relativePath: { eq: "recipe1.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      styleTwo: file(relativePath: { eq: "style3.jpg" }) {
+      styleTwo: file(relativePath: { eq: "recipe2.jpg" }) {
         childImageSharp {
           fluid(quality: 90) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ribbon: file(relativePath: { eq: "ribbon1.png" }) {
+        childImageSharp {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
@@ -44,6 +51,7 @@ const Image = () => {
     indexBg: indexBg.childImageSharp.fluid,
     styleOne: styleOne.childImageSharp.fluid,
     styleTwo: styleTwo.childImageSharp.fluid,
+    ribbon: ribbon.childImageSharp.fluid,
   }
 }
 

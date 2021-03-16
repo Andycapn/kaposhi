@@ -87,7 +87,7 @@ const ProductPage = ({ data }) => {
           </div>
         </MainDiv>
         <CtaBanner
-          message={"Follow Our Social Media Pages For Exclusive Deals!"}
+          message={"Foxllow Our Social Media Pages For Exclusive Deals!"}
           link={"#"}
           btnText={`Follow us now`}
         />

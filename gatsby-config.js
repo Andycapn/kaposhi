@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Delamoda Apparel`,
+    title: `Kaposhi Dairy Products`,
     description: `Zambian High End Athletics Apparel`,
     author: `Andrew Ndhlovu`,
   },
@@ -14,7 +14,7 @@ module.exports = {
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        shopName: "delamonda-apparel",
+        shopName: "kaposhi",
         accessToken: process.env.SHOPIFY_STORE,
         apiVersion: "2020-01",
         verbose: true,

@@ -1,12 +1,8 @@
 import React, { useContext, useState } from "react"
-
 import Cart from "../components/Cart"
-import { Container } from "../utils/styles"
 import Layout from "../components/layout"
 import { MainDiv } from "../components/MyStyledComponents"
 import { css } from "@emotion/react"
-import StoreContext from "../Context/storeContext"
-import reduce from "lodash/reduce"
 import { CtaBanner } from "../components/ctaBanner"
 
 const CartPage = () => {

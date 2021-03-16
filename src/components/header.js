@@ -172,7 +172,7 @@ const Header = ({ dark }) => {
         `}
       >
         <Link to="/" className="logo">
-          DELAMODA
+          KAPOSHI
         </Link>
         <FontAwesomeIcon
           icon={faBars}
@@ -215,9 +215,6 @@ const Header = ({ dark }) => {
               <FontAwesomeIcon icon={faShoppingCart} size={"lg"} />
               {hasItems ? <div className="quantity">{quantity}</div> : null}
             </Link>
-          </li>
-          <li className="nav-item">
-            <a href="">NEW ARRIVALS</a>
           </li>
         </ul>
       </nav>

@@ -41,8 +41,9 @@ const ProductCard = ({ product }) => {
               top: 0;
               left: 0;
               z-index: 5;
-              background-color: #ffff05;
+              background-color: #feea00;
               padding: 0.1rem 0.5rem;
+              font-family: "Bitter", serif !important;
               p {
                 font-size: 12px;
                 margin: 0;

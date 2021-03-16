@@ -9,8 +9,7 @@ const CtaBanner = ({ message, link, btnText }) => {
   return (
     <MainDiv
       css={css`
-        background: rgb(255,104,107);
-        background: linear-gradient(63deg, rgba(255,104,107,1) 0%, rgba(255,166,158,1) 50%, rgba(204,215,197,1) 100%);
+        background-color: #feea00;
         padding-bottom: 40px;
         h3 {
           font-family: "Prompt", sans-serif;

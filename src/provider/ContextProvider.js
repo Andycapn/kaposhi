@@ -6,8 +6,8 @@ import Context from "../Context/storeContext"
 
 const client = Client.buildClient(
   {
-    storefrontAccessToken: "a2898ae9756507a531a54db61521d242",
-    domain: `delamonda-apparel.myshopify.com`,
+    storefrontAccessToken: "46a0e88d60b1c3befd3c8bf9c35b5fa3",
+    domain: `kaposhi.myshopify.com`,
   },
   fetch
 )
